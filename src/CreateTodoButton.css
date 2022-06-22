@@ -1,5 +1,5 @@
 .plusButton{
-    position: absolute;
+    position: fixed;
     right: 5%;
     bottom: 2%;
     border-radius: 15px;

@@ -3,7 +3,10 @@ import './CreateTodoButton.css'
 
 const CreateTodoButton = () => {
     return(
-        <button className="plusButton">+</button>
+        <button 
+            className="plusButton"
+            onClick={() => console.log('click')}
+            >+</button>
     )
 };
 
