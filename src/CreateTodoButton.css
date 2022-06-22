@@ -1,0 +1,17 @@
+.plusButton{
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+    border-radius: 15px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background: #FFBD00;
+    border: #000 solid 2px;
+    font-size: 20px;
+    transition: all 0.5s;
+}
+.plusButton:hover{
+    background: #000;
+    color: #fff;
+}

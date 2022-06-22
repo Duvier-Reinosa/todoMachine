@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import React from "react";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { TodoCounter } from "./TodoCounter";
@@ -18,18 +18,19 @@ const todos = [
 
 function App() {
   return (
-    <React.Fragment>
+    <div className='appContainer'>
       <TodoCounter />
       <TodoSearch />
+      <h3>Mis tareas</h3>
       <TodoList>
         {
           todos.map(todo => (
-            <TodoItem text={todo.text}/>
+            <TodoItem key={todo.text} text={todo.text}/>
           ))
         }
       </TodoList>
       <CreateTodoButton />
-    </React.Fragment>
+    </div>
   );
 }
 
