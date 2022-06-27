@@ -26,6 +26,14 @@
     border-radius: 10px;
     margin: 0 0 0 20px;
     background: #000;
-    color: white;
+    color: #fff;
     border: none;
+    transition: all 0.5s;
+}
+.itemButton:hover{
+    opacity: 80%;
+}
+.itemButton:focus{
+    background: #fff;
+    color: #000;
 }
