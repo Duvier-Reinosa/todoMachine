@@ -10,7 +10,7 @@ const CreateTodoButton = () => {
         <button 
             className="plusButton"
             onClick={onClickButton}
-            >+</button>
+        >+</button>
     )
 };
 
