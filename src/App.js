@@ -1,15 +1,12 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { AppUi } from './AppUi';
-
-const defaultTodos = [
-  {text: 'llorar con la llorona', completed: true},
-  {text: 'cortar cebolla', completed: false}
-]
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, setTodos] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -20,7 +17,7 @@ function App() {
     searchedTodos = todos;
   } else {
     searchedTodos = todos.filter(todo => {
-      const todoText = todo.text.toLowerCase();
+      const todoText = todo.title.toLowerCase();
       const searchText = searchValue.toLowerCase();
       return todoText.includes(searchText);
     });
@@ -31,6 +28,7 @@ function App() {
     const newTodos = [...todos];
     newTodos[TodoIndex].completed = true;
     setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
   const deleteTodo = (text) => {
@@ -38,7 +36,17 @@ function App() {
     const newTodos = [...todos];
     newTodos.splice(TodoIndex, 1);
     setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
+
+  useEffect(() => {
+    setLoading(true);
+    if (localStorage.getItem('todos') !== null){
+        setTodos(JSON.parse(localStorage.getItem('todos'))); 
+    }
+    setLoading(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[localStorage.getItem('todos')]);
 
   return (
     <AppUi 
@@ -49,6 +57,9 @@ function App() {
       searchedTodos={searchedTodos}
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
+      showModal={showModal}
+      setShowModal={setShowModal}
+      loading={loading}
     />
   );
 }

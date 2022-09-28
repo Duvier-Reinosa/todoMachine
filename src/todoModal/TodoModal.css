@@ -1,0 +1,39 @@
+.modalContainer{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.308);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal{
+    height: 60%;
+    width: 60%;
+    padding: 1% 2%;
+    background: #fff;
+    border-radius: 25px;
+}
+.flexContainer{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: #000 solid 1px;
+    text-indent: 10px;
+    background: rgb(243, 243, 243);
+}
+.button{
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background: #FFBD00;
+    width: 100px;
+    border: #000 solid 1px;
+    cursor: pointer;
+}

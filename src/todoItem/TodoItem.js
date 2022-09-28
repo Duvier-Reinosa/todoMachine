@@ -4,7 +4,7 @@ import './TodoItem.css'
 const TodoItem = (props) => {
     return(
         <li className="itemContainer" style={{background: props.completed === true ? '#FFBD00' : '#fff'}}>
-            <span className="itemTitle">C</span>
+            <span className="itemTitle">{props.title}</span>
             <p className="itemText">{props.text}</p>
             <div className="buttonsContainer">
                 <button 
