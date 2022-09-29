@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../todoContext";
 import './CreateTodoButton.css'
 
-const CreateTodoButton = ({setShowModal}) => {
+const CreateTodoButton = () => {
+    const {setShowModal} = useContext(TodoContext);
 
     const onClickButton = () => {
         setShowModal(true);

@@ -23,16 +23,16 @@ const AppUi = () => {
                     {
                     !loading && searchedTodos.map(todo => (
                         <TodoItem 
-                        key={todo.text} 
-                        text={todo.text} 
-                        title={todo.title}
-                        completed={todo.completed}
-                        onComplete={() => completeTodo(todo.text)}
-                        onDelete={() => deleteTodo(todo.text)}/>
+                            key={todo.text} 
+                            text={todo.text} 
+                            title={todo.title}
+                            completed={todo.completed}
+                            onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}/>
                     ))
                     }
                 </TodoList>
-                {!showModal && <CreateTodoButton showModal={showModal} setShowModal={setShowModal}/>}
+                {!showModal && <CreateTodoButton/>}
             </div>
     );
 };

@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+import { TodoContext } from "../todoContext";
 import './TodoModal.css';
-const TodoModal = ({setShowModal}) => {
+const TodoModal = () => {
+    const {setShowModal} = useContext(TodoContext);
     const [titulo, setTitulo] = useState('');
     const [descripcion, setDescripcion] = useState('');
 
